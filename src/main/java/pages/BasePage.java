@@ -18,6 +18,7 @@ public class BasePage {
         PageFactory.initElements(driver, this);
         System.out.println("After page factory");
         waitHelpers = new WaitHelpers(driver);
+        System.out.println("After wait helpers");
         System.out.println("At the end of base page constructor");
     }
 
