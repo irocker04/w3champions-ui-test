@@ -14,7 +14,9 @@ public class BasePage {
     public BasePage(EventFiringWebDriver driver) {
         System.out.println("At base page");
         this.driver = driver;
+        System.out.println("After assigning driver");
         PageFactory.initElements(driver, this);
+        System.out.println("After page factory");
         waitHelpers = new WaitHelpers(driver);
         System.out.println("At the end of base page constructor");
     }
