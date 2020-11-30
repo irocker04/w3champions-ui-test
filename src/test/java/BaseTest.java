@@ -20,6 +20,8 @@ public class BaseTest {
         driver = driverManager.createDriver();
         DriverEventListener driverEventListener = new DriverEventListener();
         driver.register(driverEventListener);
+        System.out.println(driver);
+        System.out.println(driver.toString());
     }
 
     @AfterTest

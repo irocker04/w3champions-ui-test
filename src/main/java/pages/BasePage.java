@@ -12,9 +12,11 @@ public class BasePage {
     protected WaitHelpers waitHelpers;
 
     public BasePage(EventFiringWebDriver driver) {
+        System.out.println("At base page");
         this.driver = driver;
         PageFactory.initElements(driver, this);
         waitHelpers = new WaitHelpers(driver);
+        System.out.println("At the end of base page constructor");
     }
 
     public void clickButton(WebElement element) {
