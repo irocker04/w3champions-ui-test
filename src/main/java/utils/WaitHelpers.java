@@ -13,8 +13,11 @@ public class WaitHelpers {
     private WebDriverWait wait;
 
     public WaitHelpers(EventFiringWebDriver driver) {
+        System.out.println("Wait helper constructor");
         this.driver = driver;
+        System.out.println("Assigning driver");
         wait = new WebDriverWait(driver, 10);
+        System.out.println("After new WebDriverWait()");
     }
 
     public void waitForVisibilityOfElement(WebElement element) {
