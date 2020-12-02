@@ -1,25 +1,20 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import utils.WaitHelpers;
 
 public class BasePage {
 
-    protected EventFiringWebDriver driver;
+    protected WebDriver driver;
     protected WaitHelpers waitHelpers;
 
-    public BasePage(EventFiringWebDriver driver) {
-        System.out.println("At base page");
+    public BasePage(WebDriver driver) {
         this.driver = driver;
-        System.out.println("After assigning driver");
         PageFactory.initElements(driver, this);
-        System.out.println("After page factory");
         waitHelpers = new WaitHelpers(driver);
-        System.out.println("After wait helpers");
-        System.out.println("At the end of base page constructor");
     }
 
     public void clickButton(WebElement element) {

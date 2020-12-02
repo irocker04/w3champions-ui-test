@@ -1,22 +1,26 @@
 package configuration.managers;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ChromeManager implements DriverManager {
 
-    private EventFiringWebDriver driver;
+    private WebDriver driver;
 
-    public EventFiringWebDriver createDriver() {
+    public WebDriver createDriver() throws MalformedURLException {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
 //            options.addArguments("--no-sandbox");
-            options.addArguments("--headless");
+//            options.addArguments("--headless");
 //            options.addArguments("disable-gpu");
-//            WebDriverManager.chromedriver().setup();
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-            driver = new EventFiringWebDriver(new ChromeDriver(options));
+            WebDriverManager.chromedriver().setup();
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+
         }
 
         System.out.println("Created ChromeDriver");

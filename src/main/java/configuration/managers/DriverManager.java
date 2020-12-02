@@ -1,9 +1,12 @@
 package configuration.managers;
 
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.WebDriver;
+
+import java.net.MalformedURLException;
 
 public interface DriverManager {
 
-    EventFiringWebDriver createDriver();
+    WebDriver createDriver() throws MalformedURLException;
+
     void close();
 }

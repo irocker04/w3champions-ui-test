@@ -1,7 +1,7 @@
 package utils;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,15 +9,12 @@ import java.util.List;
 
 public class WaitHelpers {
 
-    private EventFiringWebDriver driver;
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
+    private WebDriver driver;
 
-    public WaitHelpers(EventFiringWebDriver driver) {
-        System.out.println("Wait helper constructor");
+    public WaitHelpers(WebDriver driver) {
         this.driver = driver;
-        System.out.println("Assigning driver");
         wait = new WebDriverWait(driver, 10);
-        System.out.println("After new WebDriverWait()");
     }
 
     public void waitForVisibilityOfElement(WebElement element) {

@@ -1,9 +1,9 @@
 package pages;
 
 import models.homePage.TopRank;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
     @FindBy(css = "table.custom-table tr td div.row")
     private List<WebElement> topRanks;
 
-    public HomePage(EventFiringWebDriver driver) {
+    public HomePage(WebDriver driver) {
         super(driver);
         driver.get("https://www.w3champions.com/");
     }

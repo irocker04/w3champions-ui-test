@@ -20,9 +20,10 @@ public class HomePageTest extends BaseTest {
     }
 
     @Test
-    public void shouldDisplay5TopRanks() {
+    public void shouldDisplay5TopRanks() throws InterruptedException {
         homePage = new HomePage(driver);
         assertThat(homePage.getTopRanks().size()).isEqualTo(5);
+        Thread.sleep(5000);
     }
 
     @Test

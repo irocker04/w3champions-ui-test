@@ -5,7 +5,9 @@ import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import configuration.managers.ChromeManager;
 import configuration.managers.DriverManager;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.WebDriver;
+
+import java.net.MalformedURLException;
 
 public class DriverModule extends AbstractModule {
 
@@ -17,7 +19,7 @@ public class DriverModule extends AbstractModule {
     }
 
     @Provides
-    public EventFiringWebDriver getDriver(DriverManager driverManager) {
+    public WebDriver getDriver(DriverManager driverManager) throws MalformedURLException {
         return driverManager.createDriver();
     }
 
