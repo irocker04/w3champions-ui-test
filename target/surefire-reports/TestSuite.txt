@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 5.501 s <<< FAILURE! - in TestSuite
+shouldDisplay3Links(HomePageTest)  Time elapsed: 0.143 s  <<< FAILURE!
+java.lang.NullPointerException
+	at HomePageTest.shouldDisplay3Links(HomePageTest.java:16)
+
+shouldDisplay5TopRanks(HomePageTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.NullPointerException
+	at HomePageTest.shouldDisplay5TopRanks(HomePageTest.java:23)
+
+shouldDisplayProperTopRankPlayersNames(HomePageTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.NullPointerException
+	at HomePageTest.shouldDisplayProperTopRankPlayersNames(HomePageTest.java:29)
+
