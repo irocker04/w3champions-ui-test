@@ -19,7 +19,7 @@ public class ChromeManager implements DriverManager {
 //            options.addArguments("--headless");
 //            options.addArguments("disable-gpu");
             WebDriverManager.chromedriver().setup();
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), options);
 
         }
 
